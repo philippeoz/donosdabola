@@ -1,5 +1,4 @@
 from django.http import HttpRequest
-from django.views import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
@@ -8,6 +7,7 @@ from .forms import *
 from django.views.decorators.csrf import csrf_exempt
 from django.core.urlresolvers import reverse_lazy
 from django.core.paginator import Paginator
+from django.views import View
 
 
 # Create your views here.
