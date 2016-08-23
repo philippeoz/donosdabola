@@ -1,0 +1,112 @@
+{% extends "core/base.html" %}
+
+{% block bootstrap3_title %}
+<title>Donos da Bola</title>
+{% endblock %}
+
+{% block bootstrap3_content %}
+<div class="content-body">
+<div id="top" class="header-bg fullpage">
+    <div class="header fullpage">
+        <div class="col-sm-4 col-sm-offset-7">
+            <div class="connect-icon">
+                <div class="social  clearfix  animated bounceInDown">
+                    <a href="https://www.facebook.com/ufpioficial/"><img alt="ozeventos" src="/static/css/images/facebook.png" width="32"></a>
+                    <a href="https://www.twitter.com/ufpioficial/"><img alt="ozeventos" src="/static/css/images/twitter.png"  width="32"></a>
+                    <a href="https://www.instagram.com/ufpi/"><img alt="ozeventos" src="/static/css/images/instagram.png"  width="32"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="absolute-center">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h1 class="info animated fadeInDown"><a href="" class="logo"><br>Divirta-se nos melhores campos da região!</a><br><b><a href="/cadastrar/">Cadastre-se</a> e conheça!<br>Ótimos preços!</b></h1>
+                        <a href="#portfolio_eventos" class="btn scroll animated bounceInUp">Nossos Campos</a><a href="#carousel-team" class="btn scroll animated bounceInDown">Conheça a Equipe</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header 
+-->
+<!-- eventos -->
+<!-- works -->
+
+
+<div id="portfolio_eventos" class="portfolio spacer">
+<div class="container">
+
+    <ul class="grid effect-2" id="grid">
+    {% for camp in lista_campos %}
+        <li><img alt="portfolio" src="/static/css/images/grid-image/{{ camp.id }}.jpg" width="450" class="img-circle"><div class="overlay animated fadeIn"><span class="animated bounceIn"><a href="#" target="_blank"><i class="fa fa-link"></i>{{ camp.nome }}<br> Reservar</a></span></div></li>
+    {% endfor %}    
+    </ul>
+</div>
+</div>
+</div>
+        <!-- gridloading script -->
+    <script src="/static/css/assets/gridloading/js/modernizr.custom.js"></script>
+    <script src="/static/css/assets/gridloading/js/masonry.pkgd.min.js"></script>
+    <script src="/static/css/assets/gridloading/js/imagesloaded.js"></script>
+    <script src="/static/css/assets/gridloading/js/classie.js"></script>
+    <script src="/static/css/assets/gridloading/js/AnimOnScroll.js"></script>
+    <!-- gridloading script -->
+
+<!-- eventos -->
+
+<!-- team -->
+<div class="team-bg">
+<div class="team center spacer">
+    <h2></h2>
+
+    <div id="carousel-team" class="carousel slide" data-ride="carousel">
+    <div class="container">
+
+
+<div class="carousel-inner">    
+            <p>Philippe Valfok</p>
+            <span>Bacharelando em Ciências da Computação - UFPI<br>Programador - Hacker<br>
+            Pai da Maria Eduarda<br>Gamer nas horas vagas :D</span>
+            </div>
+            <div class="item  animated bounceInRight">
+            <span class="animated slideInLeft"><img alt="portfolio" src="https://avatars2.githubusercontent.com/u/10995963?v=3&s=460" width="250" class="img-circle"></span>
+    </div>
+
+
+    <!-- Controls -->
+    <a class="left arrow" href="#carousel-team" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+    <a class="right arrow" href="#carousel-team" data-slide="next"><i class="fa fa-angle-right"></i></a>
+    <!-- Controls -->
+    </div>
+
+    </div>  
+</div>
+</div>
+
+<!-- team -->
+
+
+
+<!-- scroll -->
+</div>
+<a href="#top" class="toTop scroll"><i class="fa fa-angle-up"></i></a>
+
+    <script src="/static/css/assets/scripts.js"></script>
+<!-- scroll -->
+
+    <script>
+      $( document ).ready(function() {
+        $("#top").height($(".header.fullpage").height());
+        $("#searchBtn").click(function(){
+            $("#formSearch").submit();
+        })
+      })
+
+
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_title %}
+<title>Cadastro</title>
+{% endblock %}
+
+{% block bootstrap3_content %}
+    <div class="container">
+    {% if user.is_staff %}
+         <center><h3>Dashboard</h3></center></br>
+          
+         <ul class="list-group" style="width: 400px">
+         {% for campo in lista_campos %}
+            <li class="list-group-item">
+                <span class="badge">Reservas<br>14</span>
+                <h4>{{ campo.nome }}</h4>
+                {{ campo.descricao }}<br>
+                Disponível das: {{ campo.horario_disponivel_de }} às
+                {{ campo.horario_disponivel_ate }}
+                <br><br>
+                <a href="/login/"><button type="submit" class="btn btn-default">Deletar</button></a>
+                <a href="/login/"><button type="submit" class="btn btn-default">Reservas</button></a>
+                <a href="/login/"><button type="submit" class="btn btn-default">Editar</button></a>
+            </li>
+        {% endfor %}
+        </ul>
+
+
+         {% buttons %}
+        <a href="/campo/add/"><input type="submit" value="Adicionar Campo" class="btn btn-default btn-lg btn-block"></a>
+        {% endbuttons %}
+    {% endif %}
+    </div>
+{% endblock %}

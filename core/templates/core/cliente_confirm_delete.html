@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_title %}
+<title>Cadastro</title>
+{% endblock %}
+
+{% block bootstrap3_content %}
+    <div class="row">
+    <div class="container col-sm-6 centred"> 
+     <h3>Tem certeza que deseja deletar seu usuário?</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {# {% bootstrap_form form %} #}
+        {{ form.as_p }}
+        {% buttons %}
+        <input type="submit" value="Deletar" class="btn btn-success btn-lg btn-block">
+        {% endbuttons %}
+    </form>
+        {% buttons %}
+        <a href="/"><input type="submit" value="Home" class="btn btn-success btn-lg btn-block"></a>
+        {% endbuttons %}
+    </div>
+    </div>
+{% endblock %}
