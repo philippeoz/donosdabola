@@ -1,13 +1,9 @@
 Babel==2.3.4
+dj-database-url==0.4.1
 Django==1.10
 django-bootstrap3==7.0.1
 django-class-based-auth-views==0.4
-django-phonenumber-field==1.1.0
+gunicorn==19.6.0
 phonenumberslite==7.5.2
 pytz==2016.6.1
-Babel==2.3.4
-Django==1.10
-django-bootstrap3==7.0.1
-django-class-based-auth-views==0.4
-phonenumberslite==7.5.2
-pytz==2016.6.1
+whitenoise==3.2.1

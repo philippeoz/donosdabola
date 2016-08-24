@@ -6,6 +6,7 @@ from django.views.generic import TemplateView
 from class_based_auth_views.views import LoginView, LogoutView
 from django.views.decorators.csrf import csrf_exempt
 
+
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home_page'),
 
@@ -29,3 +30,4 @@ urlpatterns = [
 
     url(r'^accounts/login/$',csrf_exempt(LoginView.as_view(form_class=AuthenticationForm)), name="login"),
 ]
+

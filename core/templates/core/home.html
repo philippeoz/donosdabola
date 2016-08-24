@@ -41,7 +41,7 @@
 
     <ul class="grid effect-2" id="grid">
     {% for camp in lista_campos %}
-        <li><img alt="portfolio" src="/static/css/images/grid-image/{{ camp.id }}.jpg" width="450" class="img-circle"><div class="overlay animated fadeIn"><span class="animated bounceIn"><a href="#" target="_blank"><i class="fa fa-link"></i>{{ camp.nome }}<br> Reservar</a></span></div></li>
+        <li><img alt="portfolio" src="/static/css/images/grid-image/{{ camp.id }}.jpg" style="height: 360px;width: 360px" class="img-circle"><div class="overlay animated fadeIn"><span class="animated bounceIn"><a href="#" target="_blank"><i class="fa fa-link"></i>{{ camp.nome }}<br> Reservar</a></span></div></li>
     {% endfor %}    
     </ul>
 </div>
