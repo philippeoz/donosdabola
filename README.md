@@ -17,4 +17,4 @@ Como executar?
 5. Iniciar o servidor web
     * `python manage.py runserver`
 
-5
+5. Crie um usuário superuser, para que ele possa ativar o "is_staff" dos outros.
