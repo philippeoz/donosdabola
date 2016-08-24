@@ -9,7 +9,7 @@ class Cliente(AbstractBaseUser):
     Classe de usuário customizada, utilizando/extendendo AbstractUser
     """
     nome = models.CharField(max_length=20)
-    email = models.EmailField(unique=True, db_index=True)
+    email = models.EmailField(db_index=True)
     telefone = models.CharField(max_length=15)
     cpf_cnpj = models.CharField(max_length=15)
     joined = models.DateTimeField(auto_now_add=True)
@@ -23,6 +23,10 @@ class Cliente(AbstractBaseUser):
 
     def get_absolute_url(self):
         return reverse('cliente_update', kwargs={'pk': self.pk})
+
+    class Meta:
+        unique_together = ('email', 'cpf_cnpj')
+
 
 
 class Campo(models.Model):

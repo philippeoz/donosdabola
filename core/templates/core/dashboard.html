@@ -9,9 +9,12 @@
 {% block bootstrap3_content %}
     <div class="container">
     {% if user.is_staff %}
-         <center><h3>Dashboard</h3></center></br>
-          
-         <ul class="list-group" style="width: 400px">
+         {% buttons %}
+        <a href="/campo/add/" width="600px"><input type="submit" value="Adicionar Campo" class="btn btn-default btn-lg btn-block"></a>
+        {% endbuttons %}
+<div style="width: 1200px">
+    <div style="float: left; width: 400px;">
+         <ul class="list-group" style="width: 350px">
          {% for campo in lista_campos %}
             <li class="list-group-item">
                 <span class="badge">Reservas<br>14</span>
@@ -20,17 +23,31 @@
                 Disponível das: {{ campo.horario_disponivel_de }} às
                 {{ campo.horario_disponivel_ate }}
                 <br><br>
-                <a href="/login/"><button type="submit" class="btn btn-default">Deletar</button></a>
-                <a href="/login/"><button type="submit" class="btn btn-default">Reservas</button></a>
-                <a href="/login/"><button type="submit" class="btn btn-default">Editar</button></a>
+                <a href="/campo/{{ campo.pk }}/delete/"><button type="submit" class="btn btn-success">Deletar</button></a>
+                <a href="/login/"><button type="submit" class="btn btn-success">Reservas</button></a>
+                <a href="/login/"><button type="submit" class="btn btn-success">Editar</button></a>
             </li>
         {% endfor %}
         </ul>
+    </div>
+    <div style="float: left; width: 400px;">
+        <ul class="list-group" style="width: 350px">
+         {% for client in lista_clientes %}
+            <li class="list-group-item">
+                <span class="badge">Reservas<br>14</span>
+                <h4>{{ client.nome }}</h4>
+                {{ client.email }}<br>
+                {{ client.telefone }}
+                <br><br>
+                <a href="/login/"><button type="submit" class="btn btn-success">Deletar</button></a>
+                <a href="/login/"><button type="submit" class="btn btn-success">Reservas</button></a>
+                <a href="/login/"><button type="submit" class="btn btn-success">Editar</button></a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
 
-
-         {% buttons %}
-        <a href="/campo/add/"><input type="submit" value="Adicionar Campo" class="btn btn-default btn-lg btn-block"></a>
-        {% endbuttons %}
     {% endif %}
     </div>
 {% endblock %}

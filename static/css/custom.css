@@ -141,30 +141,6 @@ body {
     background: url('images/bg.jpg') fixed;
 }
 
-.login_form input[type=submit]{
-	-webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background-color: #0BB7A7;
-    color: #e7e7e7;
-    border-color: #0BB7A7;
-    font-weight: 300;
-    width: 100%;
-    height: 30px;
-}
-.form-signin input[type=submit]{
-	-webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    margin-bottom: 20px;
-    background-color: #0BB7A7;
-    color: #e7e7e7;
-    border-color: #0BB7A7;
-    font-weight: 300;
-    width: 100%;
-    height: 30px;
-}
 .animated.slideInDown{
 	margin-bottom: 50px;
 }

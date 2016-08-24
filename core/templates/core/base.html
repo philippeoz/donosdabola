@@ -28,7 +28,7 @@
 <body>
 {% bootstrap_messages %}
 
-<nav class="navbar navbar-default" style="height: 120px;">
+<nav class="navbar navbar-default" style="height: 125px;">
     <div class="container-fluid" >
 
 
@@ -36,7 +36,7 @@
             <div class="col-xs-12">
                 <div class="col-xs-2">
                     <div class="navbar-header">
-                       <a class="navbar-brand" href="/" style="font-family: Baloo Da;font-size: 50px;text-align: center;"><br>Donos</br></br>da Bola </a>
+                       <a class="navbar-brand" href="/" style="font-family: Baloo Da;font-size: 410%;text-align: center;"><br>Donos</br></br>da Bola </a>
                     </div>
                 </div>
                 <div class="col-xs-6">
@@ -47,12 +47,13 @@
                 <div class="col-xs-4">
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <div class="navbar-form navbar-right">
-                        {% if user.is_authenticated %}<h4>Olá, {{ user.username }}.</h4>
-                        <a href="/accounts/profile"><button type="submit" class="btn btn-default btn-block">Dashboard</button></a>
-                        <a href="/logout/"><button type="submit" class="btn btn-default btn-block">Sair</button></a>
+                        {% if user.is_authenticated %}
+                        <a href="/accounts/profile"><button type="submit" class="btn btn-success btn-block">Dashboard</button></a><br>
+                        <a href="/logout/"><button type="submit" class="btn btn-success btn-block">Sair</button></a>
+                        <h5 align="center">Olá, {{ user.username }}.</h5>
                         {% else %}
-                            <a href="/cliente/add"><button type="submit" class="btn btn-default btn-block">Cadastrar</button></a></br>
-                            <a href="/login/"><button type="submit" class="btn btn-default btn-block">Login</button></a>
+                            <a href="/cliente/add"><button type="submit" class="btn btn-success btn-block">Cadastrar</button></a></br>
+                            <a href="/login/"><button type="submit" class="btn btn-success btn-block">Login</button></a>
                         {% endif %}
                         </div>
                     </div>

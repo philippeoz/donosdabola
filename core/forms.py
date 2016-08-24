@@ -86,3 +86,17 @@ class CadastroCampoForm(forms.ModelForm):
                 'horario_disponivel_de',
                 'horario_disponivel_ate',
                 'valor_hora',]
+
+class CadastroReservaForm(forms.ModelForm):
+    campo = forms.CharField(required=True,max_length=20)
+    cliente = forms.CharField(required=True)
+    reservado_de = forms.DateTimeInput()
+    reservado_ate = forms.DateTimeInput()
+    valor = forms.FloatField()
+
+    class Meta:
+        model = Reserva
+        fields = ['campo', 'cliente',
+                'reservado_de',
+                'reservado_ate',
+                'valor',]

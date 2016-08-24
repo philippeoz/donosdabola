@@ -36,7 +36,7 @@ class DashboardView(TemplateView):
         # except EmptyPage:
         # # If page is out of range (e.g. 9999), deliver last page of results.
         # campos = paginator.page(paginator.num_pages)
-
+        context['lista_clientes'] = Cliente.objects.all()
         context['lista_campos'] = lista_campos
         context['cliente'] = Cliente
         return context
@@ -72,6 +72,21 @@ class CampoDelete(DeleteView):
     form_class = CadastroCampoForm
     success_url = reverse_lazy('dashboard')
 
+class ReservaCreate(CreateView):
+    model = Reserva
+    form_class = CadastroReservaForm
+
+
+class ReservaUpdate(UpdateView):
+    model = Reserva
+    form_class = CadastroReservaForm
+
+
+class ReservaDelete(DeleteView):
+    model = Reserva
+    form_class = CadastroReservaForm
+    success_url = reverse_lazy('dashboard')
+
 
 
 
@@ -81,3 +96,6 @@ cliente_delete = csrf_exempt(ClienteDelete.as_view())
 campo_create = csrf_exempt(CampoCreate.as_view())
 campo_update = csrf_exempt(CampoUpdate.as_view())
 campo_delete = csrf_exempt(CampoDelete.as_view())
+reserva_create = csrf_exempt(ReservaCreate.as_view())
+reserva_update = csrf_exempt(ReservaUpdate.as_view())
+reserva_delete = csrf_exempt(ReservaDelete.as_view())
