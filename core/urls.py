@@ -22,6 +22,12 @@ urlpatterns = [
 
     url(r'campo/(?P<pk>[0-9]+)/delete/$', campo_delete, name='campo_delete'),
 
+    url(r'reserva/add/$', reserva_create, name='reserva_add'),
+
+    url(r'reserva/(?P<pk>[0-9]+)/$', reserva_update, name='reserva_update'),
+
+    url(r'reserva/(?P<pk>[0-9]+)/delete/$', reserva_delete, name='reserva_delete'),
+
     url(r'^login/$', csrf_exempt(LoginView.as_view(form_class=AuthenticationForm)), name="login"),
 
     url(r'^logout/$', csrf_exempt(LogoutView.as_view()), name="logout"),

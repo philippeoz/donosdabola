@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_title %}
+<title>Cadastro</title>
+{% endblock %}
+
+{% block bootstrap3_content %}
+    <div class="container" style="width: 400px;border: 2x;border-radius: 5px;background-color: #ffffff">
+    <div class="login-form"> 
+     <center><h3>Reserva</h3></center></br>
+    <form method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {# {{ form.as_p }} #}
+        <br>{% buttons %}
+        <input type="submit" value="Cadastrar" class="btn btn-successt btn-lg btn-block">
+        {% endbuttons %}
+    </form><br>
+     {% buttons %}
+        <a href="/"><input type="submit" value="Home" class="btn btn-success btn-lg btn-block"></a>
+        {% endbuttons %}
+    </div>
+    </div>
+{% endblock %}
